@@ -1,6 +1,6 @@
 import { Rubik } from "next/font/google";
 import "./globals.css";
-import Menu from "@/components/menu";
+import Menu from "@/app/Menu/components/menu";
 
 const rubik = Rubik({
   variable: "--font-rubik",

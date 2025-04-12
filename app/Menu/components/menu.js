@@ -7,11 +7,11 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const menuLinks = [
-  { path: "/", label: "Home" },
-  { path: "/work", label: "Work" },
-  { path: "/about", label: "About" },
-  { path: "/contact", label: "Contact" },
-  { path: "/lab", label: "Lab" },
+  { path: "/Menu", label: "Home" },
+  { path: "/Menu/work", label: "Work" },
+  { path: "/Menu/about", label: "About" },
+  { path: "/Menu/contact", label: "Contact" },
+  { path: "/Menu/lab", label: "Lab" },
 ];
 export default function Menu() {
   const container = useRef();
@@ -25,7 +25,7 @@ export default function Menu() {
       ti.current
         .to(".menu-overlay", {
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-          duration: 1.3,
+          duration: 1.25,
           ease: "power4.inOut",
         })
         .to(".menu-link", {
@@ -33,13 +33,12 @@ export default function Menu() {
           stagger: 0.1,
           duration: 1,
           ease: "power4.inOut",
-          delay: -0.4,
-        })
+        },"-=1")
         .to(".menu-close-button", {
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
           duration: 1,
           ease: "power2.inOut",
-        });
+        },"-=.7");
     },
     { scope: container }
   );
@@ -99,7 +98,7 @@ export default function Menu() {
             onClick={toggleMenu}
             size={170}
             strokeWidth={1}
-            className="text-zinc-900 absolute bottom-3 left-3 cursor-pointer menu-close-button"
+            className="text-zinc-900 absolute bottom-3 md:left-52 cursor-pointer menu-close-button"
           />
         </div>
       </div>
