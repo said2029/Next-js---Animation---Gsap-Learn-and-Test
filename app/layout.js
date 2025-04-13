@@ -1,6 +1,5 @@
 import { Rubik } from "next/font/google";
 import "./globals.css";
-import Menu from "@/app/Menu/components/menu";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -20,7 +19,6 @@ export default function RootLayout({ children }) {
       <body
         className={`${rubik.variable} antialiased`}
       >
-        <Menu/>
         {children}
       </body>
     </html>
