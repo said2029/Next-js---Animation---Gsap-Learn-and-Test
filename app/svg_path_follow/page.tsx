@@ -17,17 +17,17 @@ const TEXT_PRIMARY = [
 export default function page() {
   const container = useRef(null);
 
-  useEffect(() => {
-    const path_data = document.getElementById("path-1")?.getAttribute("d");
-    document.getElementById("defs-1").setAttribute("d", path_data);
-  }, []);
+  // useEffect(() => {
+  //   const path_data = document.getElementById("path-1")?.getAttribute("d");
+  //   document.getElementById("defs-1").setAttribute("d", path_data);
+  // }, []);
 
   useGSAP(
     () => {
       gsap.to("#text-34", {
         attr: { startOffset: "100%" },
         duration: 6,
-        stagger: 3,
+        stagger: 2,
         repeat: -1,
         ease: "linear",
       });
@@ -43,13 +43,14 @@ export default function page() {
       //   animation("#text1", 0);
       //   animation("#text2", 3);
       //   animation("#text3", 4);
+
     },
     { scope: container }
   );
   return (
     <div
       ref={container}
-      className="mx-auto flex justify-center items-center h-screen"
+      className="mx-auto flex justify-center items-center h-screen relative"
     >
       <svg
         width="800px"
@@ -82,7 +83,7 @@ export default function page() {
         </text>
       </svg>
 
-      <div className="size-[600px] absolute bottom-40 right-1/2 left-1/2 -translate-x-1/2">
+      <div className="size-[400px] lg:size-[600px] top-0 md:top-auto absolute bottom-40 right-1/2 left-1/2 -translate-x-1/2">
         <Image className="w-full h-full object-cover animate-[spin_3s_linear_infinite]" width={400} height={400} alt="" src="/disk.png" />
       </div>
     </div>
